@@ -1,0 +1,12 @@
+class Solution:
+    def findClosestNumber(self, nums: List[int]) -> int:
+        shortestDist = float("inf") 
+        returnVal = float("inf") 
+        for num in nums:
+            if abs(0 - num) < shortestDist:
+                shortestDist = abs(0 - num)
+                returnVal = num
+            if abs(0 - num) == shortestDist:
+                if num > returnVal:
+                    returnVal = num
+        return returnVal
